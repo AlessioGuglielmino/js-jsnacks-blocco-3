@@ -1,17 +1,21 @@
-// Chiedi all'utente un primo numero, poi un secondo e genera un numero casuale compreso tra i due.
+// Dare la possibilità di inserire due parole. Verificare che le due parole abbiano la stessa lunghezza.
+// Se hanno la stessa lunghezza, stamparle entrambe altrimenti stampare la più lunga delle due.
 
-const firstNumber = parsint(prompt("scegli un numero"));
-const secondNumber = parsint(prompt("scegli un secondo numero"));
-let numeroMaggiore;
-let numerominore;
+const primaParola = prompt("inserisci una parola");
+const secondaParola = prompt("inserisci una seconda parola");
+let parolaLunga = "";
 
-if (firstNumber > secondNumber) {
-  numeroMaggiore = firstNumber;
-  numerominore = secondNumber;
-} else if (firstNumber < secondNumber) {
-  numeroMaggiore = secondNumber;
-  numerominore = firstNumber;
+if (primaParola.length > secondaParola.length) {
+  parolaLunga = primaParola;
+} else if (primaParola.length < secondaParola.length) {
+  parolaLunga = secondaParola;
 }
 
-let randomNumber = Math.floor(Math.random() * numeroMaggiore) * numerominore;
-console.log(randomNumber);
+// CONFRONTO LA LUNGHEZZA DELLE DUE PAROLE
+
+if (primaParola.length == secondaParola.length) {
+  console.log(primaParola);
+  console.log(secondaParola);
+} else if (primaParola.length !== secondaParola.length) {
+  console.log(parolaLunga);
+}
